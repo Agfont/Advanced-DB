@@ -1,0 +1,23 @@
+server
+docker network create global
+docker-compose up -d --build
+npm run dev
+
+sudo systemctl stop redis-server.service
+Stop all running containers: docker stop $(docker ps -a -q)
+Delete all stopped containers: docker rm $(docker ps -a -q)
+
+client
+npm install @vue/cli-plugin-babel/preset --save-dev
+npm run serve
+
+redis
+redis-cli
+auth demo
+demo
+senha MYSQL: !Verdao99
+
+KEYS *18
+SCAN {cursor} MATCH 'cart:*'
+JSON.GET product:24
+HGETALL cart:*

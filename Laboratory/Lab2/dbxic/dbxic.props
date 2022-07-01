@@ -1,0 +1,6 @@
+# DBxic's database directory
+dbxic.base.dir=/home/arthurfont/Desktop/BDA/Laboratory/Lab2/dbxic/db
+# DBxic's temporary files directory
+dbxic.temp.dir=/home/arthurfont/Desktop/BDA/Laboratory/Lab2/dbxic/db/tmp
+# The number of blocks in the buffer
+dbxic.buffersize=50

@@ -1,0 +1,49 @@
+2.a)
+/engine/parser/dbxic_sql_parser.jj at line 709
+// TODO: your UPDATE syntanxis goes here
+
+"update" table = Identifier()
+"set" v = AttrValueList()
+"where" prop = IdProposition()
+-----------------------------------------------
+b)
+/engine/core/TupleModification.java at line 78
+// TODO: TupleModification: YOUR CODE GOES HERE
+-----------------------------------------------
+c)
+/storage/StorageManager.java at line 21
+ * TODO: we should check the use of 'dirty' flag (writeBlock, readBlock) and
+ *  maybe use it to decide if evicted blocks need to be written back to disk or not
+simple modification
+
+
+3.a) Using indexes.
+
+b) It will be necessary to check if att_i is an atribute of the table to avoid errors.
+create table student (id integer, name string, birth_year
+integer);
+create table department (id integer, name string, place string);
+create table teacher (id integer, name string, phd_year integer,
+department_id integer);
+
+insert into department values (13, 'Physics', 'Barcelona');
+insert into department values (20, 'Maths', 'Bellaterra');
+insert into department values (15, 'CS', 'Pals');
+insert into teacher values (1, 'Bill Gates', 1979, 15);
+insert into teacher values (2, 'Steve Jobs', 1981, 15);
+insert into teacher values (3, 'Einstein', 1927, 13);
+
+select teacher.name from teacher where teacher.name = 'Bill Gates';
+select teacher.name from teacher where teacher.name = 'Steve Jobs';
+select teacher.name from teacher where teacher.name = 'Einstein';
+select teacher.name from teacher where teacher.name = 'Arthur';
+
+update teacher set teacher.name = 'Arthur' where teacher.phd_year = 1981;
+update teacher set teacher.name = 'Arthur', teacher.department_id = 100 where teacher.phd_year = 1981;
+
+select teacher.id, teacher.name, teacher.phd_year, teacher.department_id from teacher where teacher.name = 'Arthur';
+
+drop table student;
+drop table teacher;
+drop table department;
+

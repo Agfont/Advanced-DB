@@ -1,0 +1,21 @@
+STREAM: parser -> algebra -> PlanBuilder -> physical operators
+---> src/engine/core
+catalogFile -> name of table, name of attributes
+xiqcql > catalog;
+
+DBMS
+PlainBuilder -> Optimizer
+Actions
+TupleModifcation (TODO: A little higher more than 5 lines)
+
+---> src/engine/parser
+UPDATE -> only touch on dbxic_sql_parser
+On this lab, we need to touch the XicQLparser (TupleModifcation/Update)
+
+---> src/storage
+BufferManager
+StorageManager(Update)
+
+Tips: 
+- Look to Insert on TODO: your UPDATE sintaxis (1 single line)
+- 3 TODO's
