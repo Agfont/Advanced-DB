@@ -15,7 +15,6 @@ redis
 redis-cli
 auth demo
 demo
-senha MYSQL: !Verdao99
 
 KEYS *18
 SCAN {cursor} MATCH 'cart:*'
